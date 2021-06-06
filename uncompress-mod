@@ -1,0 +1,6 @@
+# vim: set ft=sh:
+# shellcheck shell=sh
+
+for i in `find $tmpdir -name *.ko.xz`; do unxz $i; done
+
+depmod -b "$tmpdir" "$kernel"
