@@ -1,5 +1,9 @@
+ifeq ($(PREFIX),)
+	PREFIX := /usr
+endif
+
 all: install
 
 install:
-	mkdir /usr/share/tinyramfs/hooks/uncompress-mod -p
-	cp uncompress-mod /usr/share/tinyramfs/hooks/uncompress-mod/
+	mkdir $(DESTDIR)$(PREFIX)/share/tinyramfs/hooks/uncompress-mod -p
+	cp uncompress-mod $(DESTDIR)$(PREFIX)/share/tinyramfs/hooks/uncompress-mod/
